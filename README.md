@@ -4,7 +4,7 @@ Creating a fixed gif through the application of Neural Radiance Fields (NeRF) in
 results of a *fixed gif*:  
 
 <p align="center">
-  <img src="extra/first_scene/fixedfirstscene.gif" width="380" />
+  <img src="extra/first_scene/first_option/fixedfirstscene.gif" width="380" />
 </p>
 
 # Data 
@@ -36,7 +36,7 @@ To craft the fixed gif using NeRF, follow these procedures:
 Colmap was employed to produce camera positions corresponding to the extracted images. The illustration below depicts the distribution of camera positions encircling the object, with each point in black denoting the frame number. The blue points trace the trajectory of the camera operator around the object, assuming the object is situated at (0,0,0). It is evident that the camera holder completed a revolution of over 360 degrees, indicating a failure to return to the initial position. Additionally, the Z-axis indicates vertical movement as the person recorded the video, capturing fluctuations in height.  
 
 <p align="center">
-  <img src="extra/first_scene/" width="380" />
+  <img src="extra/first_scene/camerapositions.jpeg" width="300" />
 </p>
 
 **2. NeRF: Neural Radiance Fields**  
@@ -45,21 +45,16 @@ In this segment, we had the flexibility to opt for any iteration of NeRF. Our ch
 
 Additionally, we conducted a run using Instant-ngp, yielding favorable results. It certainly provides an alternative approach worth considering.
 
-<p align="center">
-  <img src="extra/first_scene/camerapositions.jpeg" width="380" />
-</p>
-
-<p align="center">
-  <img src="extra/first_scene/selectedcircle.jpeg" width="380" />
-</p>
-
-
 **3. Find a perfect closed circle**  
+
+<p align="center">
+  <img src="extra/first_scene/camerapoints.jpeg" width="300" />
+</p>
 
 TODO
 
 <p align="center">
-  <img src="extra/first_scene/camerapoints.jpeg" width="380" />
+  <img src="extra/first_scene/first_option/selectedcircle.jpeg" width="300" />
 </p>
 
 **4. Generate new images**  
@@ -69,6 +64,6 @@ TODO
 **5. New fixed gif**  
 
 <p align="center">
-  <img src="extra/first_scene/fixedfirstscene.gif" width="380" />
+  <img src="extra/first_scene/first_option/fixedfirstscene.gif" width="380" />
 </p>
 
