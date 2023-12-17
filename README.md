@@ -12,58 +12,110 @@ I photographed two different objects. The first under good conditions and withou
 you can find all the data under ./extra folder 
 
 # Work process
+**0. Source gif,** 
+generate gif using a set of images.
 
-To craft the fixed gif using NeRF, follow these procedures:
-
-1. Determine the camera position for each image using colmap. Colmap, a structure-from-motion framework, generates camera positions for a given series of images.
-
-2. Train NeRF on the extracted images, incorporating the generated camera positions. Utilize the TensoRF framework to train NeRF specifically for the scene or object.
-
-3. Pick the right points to form a closed circle around the object.
-
-4. Employ the trained NeRF network on the missed points to generate new images.
-
-5. Assemble a new gif from the newly generated images.
-
-
-**0. Source gif**  
-
-<p align="center">
-  <img src="extra/first_scene/first_option/firstscene.gif" width="380" />
-</p>
-
-**1. Camera Positions**  
+**1. Determine the camera position for each image using colmap,** 
+Colmap, a structure-from-motion framework, generates camera positions for a given series of images.
 Colmap was employed to produce camera positions corresponding to the extracted images. The illustration below depicts the distribution of camera positions encircling the object, with each point in black denoting the frame number. The blue points trace the trajectory of the camera operator around the object, assuming the object is situated at (0,0,0). It is evident that the camera holder completed a revolution of over 360 degrees, indicating a failure to return to the initial position. Additionally, the Z-axis indicates vertical movement as the person recorded the video, capturing fluctuations in height.  
 
-<p align="center">
-  <img src="extra/first_scene/camerapositions.jpeg" width="300" />
-</p>
 
-**2. NeRF: Neural Radiance Fields**  
-
+**2. Train NeRF on the extracted images,** 
+incorporating the generated camera positions. Utilize the TensoRF framework to train NeRF specifically for the scene or object.
 In this segment, we had the flexibility to opt for any iteration of NeRF. Our choice fell upon TensoRF, available at https://apchenstu.github.io/TensoRF/. We selected this particular version due to its lucid PyTorch implementation and brief runtime. The training Peak Signal-to-Noise Ratio (PSNR) achieved an impressive 37.451, indicating high-quality images with minimal noise around the object.
 
 Additionally, we conducted a run using Instant-ngp, yielding favorable results. It certainly provides an alternative approach worth considering.
 
-**3. Find a perfect closed circle**  
+**3. form a closed circle,** 
+Pick the right points to form a closed circle around the object.
+TODO
+
+**4. Generate new images,** 
+Employ the trained NeRF network on the missed points to generate new images.
+
+**5. Fixed GIF,** 
+generate gif using a the final set of images, includes the generated ones
+
+
+# First Scene:
+I tried two different closed circles, and will show the difirance between the two results.
+
+## 5. First option
+TODO 
+### 0. Source gif 
+<p align="center">
+  <img src="extra/first_scene/first_option/firstscene.gif" width="380" />
+</p>
+
+### 1. Camera Positions 
+<p align="center">
+  <img src="extra/first_scene/camerapositions.jpeg" width="300" />
+</p>
+
+### 3. Find a perfect closed circle  
 
 <p align="center">
   <img src="extra/first_scene/camerapoints.jpeg" width="300" />
 </p>
 
-TODO
-
 <p align="center">
   <img src="extra/first_scene/first_option/selectedcircle.jpeg" width="300" />
 </p>
 
-**4. Generate new images**  
+### 4. Generate new images
+all the data under /extra/firstscene/images
 
-TODO
-
-**5. New fixed gif**  
+### 5. New fixed gif  
 
 <p align="center">
   <img src="extra/first_scene/first_option/fixedfirstscene.gif" width="380" />
 </p>
 
+## 5. Second option
+TODO
+### 3. Find a perfect closed circle  
+<p align="center">
+  <img src="extra/first_scene/second_option/points.jpeg" width="300" />
+</p>
+<p align="center">
+  <img src="extra/first_scene/second_option/fixedcircle.jpeg" width="300" />
+</p>
+
+
+### 5. New fixed gif  
+
+<p align="center">
+  <img src="extra/first_scene/second_option/fixed.gif" width="380" />
+</p>
+
+# Second Scene:
+TODO
+
+### 0. Source gif 
+<p align="center">
+  <img src="extra/second_scene/original.gif" width="380" />
+</p>
+
+### 1. Camera Positions 
+<p align="center">
+  <img src="extra/second_scene/scene2_3D.png" width="300" />
+</p>
+
+### 3. Find a perfect closed circle  
+
+<p align="center">
+  <img src="extra/second_scene/before.png" width="300" />
+</p>
+
+<p align="center">
+  <img src="extra/second_scene/after.png" width="300" />
+</p>
+
+### 4. Generate new images
+all the data under /extra/second_scene/images
+
+### 5. New fixed gif  
+
+<p align="center">
+  <img src="extra/second_scene/fixed.gif" width="380" />
+</p>
